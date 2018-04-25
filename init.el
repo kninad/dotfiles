@@ -30,27 +30,21 @@
 ;; BASIC CUSTOMIZATION
 ;; --------------------------------------
 
-;; Window size
-(if (window-system)
-    (set-frame-height (selected-frame) 54)
-    (set-frame-width (selected-frame) 80))
-
 ;; (setq inhibit-startup-message t) ;; hide the startup message
-(load-theme 'tango-dark t) ;; LOAD THEME
+(load-theme 'solarized-dark t) ;; Load a custom theme
 (global-linum-mode t) ;; enable line numbers globally
+(global-hl-line-mode +1) ;; Highlight current line
 
-;; Markdown mode export/preview default css file
-;; Since my backend for markdown-mode is pandoc
+;; Markdown mode html-export/preview css file
+;; The  backend for markdown-mode is pandoc.
 (add-to-list 'auto-mode-alist '("README\\.md\\'" . gfm-mode))
 (setq markdown-command "pandoc -c ~/.emacs.d/github-pandoc.css --from markdown_github -t html5 --mathjax --highlight-style pygments --standalone")
 
 
-;; EMACS CUSTOM 
+;; EMACS CUSTOM AUTO EDITS
 ;; --------------------------------------
-
 ;; Edited by Emacs custom options
 ;; dont edit by hand!
-;; unless you are elisp god.
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
