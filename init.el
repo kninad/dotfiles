@@ -38,8 +38,9 @@
 ;; Markdown mode html-export/preview css file
 ;; The  backend for markdown-mode is pandoc.
 (add-to-list 'auto-mode-alist '("README\\.md\\'" . gfm-mode))
-(setq markdown-command "pandoc -c ~/.emacs.d/github-pandoc.css --from markdown_github -t html5 --mathjax --highlight-style pygments --standalone")
-
+(setq markdown-css-paths '("/home/ninad/.emacs.d/pandoc.css"))
+;; CSS file1: /home/ninad/.emacs.d/pandoc.css
+;; CSS file2: /home/ninad/.emacs.d/tufte.css
 
 ;; EMACS CUSTOM AUTO EDITS
 ;; --------------------------------------
