@@ -1,17 +1,18 @@
 ;; init.el --- Emacs configuration
 
+;; See https://emacs.stackexchange.com/questions/5828/why-do-i-have-to-add-each-package-to-load-path-or-problem-with-require-packag
+;; Manually load package instead of waiting until after init.el is loaded
+(package-initialize)
+
 (require 'package)
 (add-to-list 'package-archives '("melpa-stable" . "http://stable.melpa.org/packages/") t)
 (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/"))
 
-;; See https://emacs.stackexchange.com/questions/5828/why-do-i-have-to-add-each-package-to-load-path-or-problem-with-require-packag
-;; Manually load package instead of waiting until after init.el is loaded
-(package-initialize)
-(package-refresh-contents)
+;;(package-refresh-contents)
 (package-install 'use-package)
 
-;;(when (not package-archive-contents)
-;;  (package-refresh-contents))
+(when (not package-archive-contents)
+  (package-refresh-contents))
 
 (defvar myPackages
   '(better-defaults
@@ -31,11 +32,11 @@
 ;; --------------------------------------
 ;; BASIC CUSTOMIZATION
 ;; --------------------------------------
-
-;;(setq inhibit-startup-message t) ;; hide the startup message
-(load-theme 'doom-spacegrey t) ;; load custom theme
-(global-linum-mode t) ;; enable line numbers globally
-(global-hl-line-mode +1) ;; highligh current line
+;;(setq inhibit-startup-message t) ;; Hide the startup message
+(load-theme 'doom-spacegrey t) ;; Load custom theme
+(global-linum-mode t) ;; Enable line numbers globally
+(global-hl-line-mode +1) ;; Highlight current line
+(toggle-frame-maximized) ;; Maximize emacs on startup
 
 ;; Corrects (and improves) org-mode's native fontification.
 (doom-themes-org-config)
@@ -51,17 +52,15 @@
 ;; Markdown mode -- use pandoc with custom css file
 (setq markdown-command "pandoc --css ~/.emacs.d/emacs-pandoc.css")
 
+
 ;; --------------------------------------
 ;; PYTHON CONFIGURATION
 ;; --------------------------------------
 (elpy-enable)
 (require 'py-autopep8)
-
-;; Use ipython shell
-;;(elpy-use-ipython) ;; Deprecated
-
 (setq elpy-rpc-python-command "/home/ninad/anaconda3/bin/python")
 
+;; Use ipython shell
 (setq python-shell-interpreter "/home/ninad/anaconda3/bin/ipython"
       python-shell-interpreter-args "-i --simple-prompt")
 
