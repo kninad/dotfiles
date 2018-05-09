@@ -35,7 +35,7 @@
 ;;(setq inhibit-startup-message t) ;; hide the startup message
 (load-theme 'doom-spacegrey t) ;; load custom theme
 (global-linum-mode t) ;; enable line numbers globally
-(global-hl-line-mode +1)
+(global-hl-line-mode +1) ;; highligh current line
 
 ;; Corrects (and improves) org-mode's native fontification.
 (doom-themes-org-config)
@@ -47,6 +47,9 @@
 ;; Auto Complete
 (ac-config-default)
 (global-auto-complete-mode t)
+
+;; Markdown mode -- use pandoc with custom css file
+(setq markdown-command "pandoc --css ~/.emacs.d/emacs-pandoc.css")
 
 ;; --------------------------------------
 ;; PYTHON CONFIGURATION
