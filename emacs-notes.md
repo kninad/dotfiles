@@ -1,6 +1,9 @@
-# Emacs basic tutorial notes
 
-## Basic navigation
+# Emacs basics
+
+These are some basic emacs commands that I noted down while going through emacs built-in tutorial. Sometimes I also use this file to try out different css files with the markdown-mode html preview/export command. Previewing a markdown file is: `C-c C-c p`. Replace 'p' with 'e' to export the markdown to an html file with the same name in the current directory.
+
+## Navigation
 
 C-f, C-b, C-n, C-p: forward, backward, next line, prev line
 

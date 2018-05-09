@@ -1,23 +1,27 @@
 ;; init.el --- Emacs configuration
 
+(require 'package)
+(add-to-list 'package-archives '("melpa-stable" . "http://stable.melpa.org/packages/") t)
+(add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/"))
+
 ;; See https://emacs.stackexchange.com/questions/5828/why-do-i-have-to-add-each-package-to-load-path-or-problem-with-require-packag
 ;; Manually load package instead of waiting until after init.el is loaded
-
-(require 'package)
-
-(add-to-list 'package-archives
-             '("melpa-stable" . "http://stable.melpa.org/packages/") t)
-
 (package-initialize)
+(package-refresh-contents)
+(package-install 'use-package)
 
-(when (not package-archive-contents)
-  (package-refresh-contents))
+;;(when (not package-archive-contents)
+;;  (package-refresh-contents))
 
 (defvar myPackages
-  '(elpy
+  '(better-defaults
+    elpy
     ein
-    flycheck
-    doom-themes))
+    py-autopep8
+    doom-themes
+    magit
+    auto-complete
+    markdown-mode))
 
 (mapc #'(lambda (package)
     (unless (package-installed-p package)
@@ -29,20 +33,34 @@
 ;; --------------------------------------
 
 ;;(setq inhibit-startup-message t) ;; hide the startup message
-(load-theme 'doom-spacegrey t) ;; load material theme
+(load-theme 'doom-spacegrey t) ;; load custom theme
 (global-linum-mode t) ;; enable line numbers globally
 (global-hl-line-mode +1)
+
+;; Corrects (and improves) org-mode's native fontification.
+(doom-themes-org-config)
+
+;; Interactively Do Things
+(require 'ido)
+(ido-mode t)
+
+;; Auto Complete
+(ac-config-default)
+(global-auto-complete-mode t)
 
 ;; --------------------------------------
 ;; PYTHON CONFIGURATION
 ;; --------------------------------------
 (elpy-enable)
-;;(elpy-use-ipython)
+(require 'py-autopep8)
 
-;; use flycheck not flymake with elpy
-(when (require 'flycheck nil t)
-  (setq elpy-modules (delq 'elpy-module-flymake elpy-modules))
-  (add-hook 'elpy-mode-hook 'flycheck-mode))
+;; Use ipython shell
+;;(elpy-use-ipython) ;; Deprecated
+
+(setq elpy-rpc-python-command "/home/ninad/anaconda3/bin/python")
+
+(setq python-shell-interpreter "/home/ninad/anaconda3/bin/ipython"
+      python-shell-interpreter-args "-i --simple-prompt")
 
 
 ;; --------------------------------------
