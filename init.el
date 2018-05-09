@@ -1,52 +1,54 @@
 ;; init.el --- Emacs configuration
 
-;; INSTALL PACKAGES
-;; --------------------------------------
+;; See https://emacs.stackexchange.com/questions/5828/why-do-i-have-to-add-each-package-to-load-path-or-problem-with-require-packag
+;; Manually load package instead of waiting until after init.el is loaded
 
 (require 'package)
 
 (add-to-list 'package-archives
-       '("melpa" . "http://melpa.org/packages/") t)
+             '("melpa-stable" . "http://stable.melpa.org/packages/") t)
 
 (package-initialize)
+
 (when (not package-archive-contents)
   (package-refresh-contents))
 
 (defvar myPackages
-  '(better-defaults
-    elpy ;; add the elpy package
-    ein ;; add the ein package (Emacs ipython notebook)
-    markdown-mode ))
+  '(elpy
+    ein
+    flycheck
+    doom-themes))
 
 (mapc #'(lambda (package)
     (unless (package-installed-p package)
       (package-install package)))
       myPackages)
 
-(elpy-enable)
-(setq python-shell-interpreter "ipython"
-      python-shell-interpreter-args "-i --simple-prompt")
-
+;; --------------------------------------
 ;; BASIC CUSTOMIZATION
 ;; --------------------------------------
 
-;; (setq inhibit-startup-message t) ;; hide the startup message
-(load-theme 'solarized-dark t) ;; Load a custom theme
+;;(setq inhibit-startup-message t) ;; hide the startup message
+(load-theme 'doom-spacegrey t) ;; load material theme
 (global-linum-mode t) ;; enable line numbers globally
-(global-hl-line-mode +1) ;; Highlight current line
+(global-hl-line-mode +1)
 
-;; Markdown mode html-export/preview css file
-;; The  backend for markdown-mode is pandoc.
-(add-to-list 'auto-mode-alist '("README\\.md\\'" . gfm-mode))
-(setq markdown-css-paths '("/home/ninad/.emacs.d/pandoc.css"))
-;; CSS file1: /home/ninad/.emacs.d/pandoc.css
-;; CSS file2: /home/ninad/.emacs.d/tufte.css
-
-;; EMACS CUSTOM AUTO EDITS
 ;; --------------------------------------
-;; Edited by Emacs custom options
-;; dont edit by hand!
+;; PYTHON CONFIGURATION
+;; --------------------------------------
+(elpy-enable)
+;;(elpy-use-ipython)
 
+;; use flycheck not flymake with elpy
+(when (require 'flycheck nil t)
+  (setq elpy-modules (delq 'elpy-module-flymake elpy-modules))
+  (add-hook 'elpy-mode-hook 'flycheck-mode))
+
+
+;; --------------------------------------
+;; CUSTOM SETTINGS by EMACS
+;; DO NOT EDIT BY HAND!
+;; --------------------------------------
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -55,91 +57,43 @@
  '(ansi-color-faces-vector
    [default default default italic underline success warning error])
  '(ansi-color-names-vector
-   (vector "#212121" "#B71C1C" "#558b2f" "#FFA000" "#2196f3" "#4527A0" "#00796b" "#FAFAFA"))
+   ["#0d0f11" "#DF8C8C" "#A8CE93" "#DADA93" "#83AFE5" "#c9b4cf" "#7FC1CA" "#e6eef3"])
  '(blink-cursor-mode nil)
- '(compilation-message-face (quote default))
- '(cua-global-mark-cursor-color "#2aa198")
- '(cua-normal-cursor-color "#657b83")
- '(cua-overwrite-cursor-color "#b58900")
- '(cua-read-only-cursor-color "#859900")
  '(custom-safe-themes
    (quote
-    ("9a155066ec746201156bb39f7518c1828a73d67742e11271e4f24b7b178c4710" "d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879" "8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" "a24c5b3c12d147da6cef80938dca1223b7c7f70f2f382b26308eba014dc4833a" "732b807b0543855541743429c9979ebfb363e27ec91e82f463c91e68c772f6e3" default)))
- '(display-battery-mode t)
- '(fci-rule-color "#ECEFF1")
- '(highlight-changes-colors (quote ("#d33682" "#6c71c4")))
- '(highlight-symbol-colors
-   (--map
-    (solarized-color-blend it "#fdf6e3" 0.25)
-    (quote
-     ("#b58900" "#2aa198" "#dc322f" "#6c71c4" "#859900" "#cb4b16" "#268bd2"))))
- '(highlight-symbol-foreground-color "#586e75")
- '(highlight-tail-colors
-   (quote
-    (("#eee8d5" . 0)
-     ("#B4C342" . 20)
-     ("#69CABF" . 30)
-     ("#69B7F0" . 50)
-     ("#DEB542" . 60)
-     ("#F2804F" . 70)
-     ("#F771AC" . 85)
-     ("#eee8d5" . 100))))
- '(hl-bg-colors
-   (quote
-    ("#DEB542" "#F2804F" "#FF6E64" "#F771AC" "#9EA0E5" "#69B7F0" "#69CABF" "#B4C342")))
- '(hl-fg-colors
-   (quote
-    ("#fdf6e3" "#fdf6e3" "#fdf6e3" "#fdf6e3" "#fdf6e3" "#fdf6e3" "#fdf6e3" "#fdf6e3")))
- '(hl-paren-colors (quote ("#2aa198" "#b58900" "#268bd2" "#6c71c4" "#859900")))
- '(hl-sexp-background-color "#efebe9")
- '(magit-diff-use-overlays nil)
- '(markdown-command "pandoc" t)
- '(nrepl-message-colors
-   (quote
-    ("#dc322f" "#cb4b16" "#b58900" "#546E00" "#B4C342" "#00629D" "#2aa198" "#d33682" "#6c71c4")))
- '(pos-tip-background-color "#eee8d5")
- '(pos-tip-foreground-color "#586e75")
- '(smartrep-mode-line-active-bg (solarized-color-blend "#859900" "#eee8d5" 0.2))
- '(term-default-bg-color "#fdf6e3")
- '(term-default-fg-color "#657b83")
+    ("4e21fb654406f11ab2a628c47c1cbe53bab645d32f2c807ee2295436f09103c6" "53d1bb57dadafbdebb5fbd1a57c2d53d2b4db617f3e0e05849e78a4f78df3a1b" "77c3f5f5acaa5a276ca709ff82cce9b303f49d383415f740ba8bcc76570718b9" "0846e3b976425f142137352e87dd6ac1c0a1980bb70f81bfcf4a54177f1ab495" "a866134130e4393c0cad0b4f1a5b0dd580584d9cf921617eee3fd54b6f09ac37" "2a1b4531f353ec68f2afd51b396375ac2547c078d035f51242ba907ad8ca19da" "7666b079fc1493b74c1f0c5e6857f3cf0389696f2d9b8791c892c696ab4a9b64" "2af26301bded15f5f9111d3a161b6bfb3f4b93ec34ffa95e42815396da9cb560" "b5ecb5523d1a1e119dfed036e7921b4ba00ef95ac408b51d0cd1ca74870aeb14" default)))
+ '(fci-rule-color "#556873")
+ '(jdee-db-active-breakpoint-face-colors (cons "#0d0f11" "#7FC1CA"))
+ '(jdee-db-requested-breakpoint-face-colors (cons "#0d0f11" "#A8CE93"))
+ '(jdee-db-spec-breakpoint-face-colors (cons "#0d0f11" "#899BA6"))
+ '(scroll-bar-mode nil)
+ '(show-paren-mode t)
  '(tool-bar-mode nil)
- '(vc-annotate-background nil)
- '(vc-annotate-background-mode nil)
+ '(vc-annotate-background "#0d0f11")
  '(vc-annotate-color-map
-   (quote
-    ((20 . "#B71C1C")
-     (40 . "#FF5722")
-     (60 . "#FFA000")
-     (80 . "#558b2f")
-     (100 . "#00796b")
-     (120 . "#2196f3")
-     (140 . "#4527A0")
-     (160 . "#B71C1C")
-     (180 . "#FF5722")
-     (200 . "#FFA000")
-     (220 . "#558b2f")
-     (240 . "#00796b")
-     (260 . "#2196f3")
-     (280 . "#4527A0")
-     (300 . "#B71C1C")
-     (320 . "#FF5722")
-     (340 . "#FFA000")
-     (360 . "#558b2f"))))
- '(vc-annotate-very-old-color nil)
- '(weechat-color-list
-   (quote
-    (unspecified "#fdf6e3" "#eee8d5" "#990A1B" "#dc322f" "#546E00" "#859900" "#7B6000" "#b58900" "#00629D" "#268bd2" "#93115C" "#d33682" "#00736F" "#2aa198" "#657b83" "#839496")))
- '(xterm-color-names
-   ["#eee8d5" "#dc322f" "#859900" "#b58900" "#268bd2" "#d33682" "#2aa198" "#073642"])
- '(xterm-color-names-bright
-   ["#fdf6e3" "#cb4b16" "#93a1a1" "#839496" "#657b83" "#6c71c4" "#586e75" "#002b36"]))
-
-
+   (list
+    (cons 20 "#A8CE93")
+    (cons 40 "#b8d293")
+    (cons 60 "#c9d693")
+    (cons 80 "#DADA93")
+    (cons 100 "#e2d291")
+    (cons 120 "#eaca90")
+    (cons 140 "#F2C38F")
+    (cons 160 "#e4bea4")
+    (cons 180 "#d6b9b9")
+    (cons 200 "#c9b4cf")
+    (cons 220 "#d0a6b8")
+    (cons 240 "#d799a2")
+    (cons 260 "#DF8C8C")
+    (cons 280 "#c98f92")
+    (cons 300 "#b39399")
+    (cons 320 "#9e979f")
+    (cons 340 "#556873")
+    (cons 360 "#556873")))
+ '(vc-annotate-very-old-color nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )
-
-;; init.el ends here
+ '(default ((t (:family "DejaVu Sans Mono" :foundry "PfEd" :slant normal :weight normal :height 109 :width normal)))))
