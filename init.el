@@ -15,8 +15,7 @@
   (package-refresh-contents))
 
 (defvar myPackages
-  '(better-defaults
-    elpy
+  '(elpy
     ein
     py-autopep8
     doom-themes
@@ -32,11 +31,12 @@
 ;; --------------------------------------
 ;; BASIC CUSTOMIZATION
 ;; --------------------------------------
-;;(setq inhibit-startup-message t) ;; Hide the startup message
+;;(setq inhibit-startup-message t) ;; Hide the startup message (I like the startup message)
 (load-theme 'doom-spacegrey t) ;; Load custom theme
 (global-linum-mode t) ;; Enable line numbers globally
 (global-hl-line-mode +1) ;; Highlight current line
 (toggle-frame-maximized) ;; Maximize emacs on startup
+(menu-bar-mode +1) ;; Enable menu bar
 
 ;; Corrects (and improves) org-mode's native fontification.
 (doom-themes-org-config)
@@ -51,6 +51,23 @@
 
 ;; Markdown mode -- use pandoc with custom css file
 (setq markdown-command "pandoc --css ~/.emacs.d/emacs-pandoc.css")
+
+;;---------------------------------
+;; Org mode config
+;;---------------------------------
+
+;; Enable Org mode
+(require 'org)
+;; Make Org mode work with files ending in .org
+;; (add-to-list 'auto-mode-alist '("\\.org$" . org-mode))
+;; The above is the default in recent emacsen
+
+;; Enable transient mark mode
+(transient-mark-mode 1)
+
+;; Shift selection
+(setq org-support-shift-select 'always)
+(setq org-html-validation-link nil)
 
 
 ;; --------------------------------------
