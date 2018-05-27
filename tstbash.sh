@@ -3,7 +3,7 @@
 cp ~/.bashrc ./
 cp ~/.vimrc ./
 cp ~/.emacs.d/init.el ./
-cp ~/.emacs.d/extras/* ./
+cp ~/.emacs.d/emacs/myextras/* ./
 cp ~/Desktop/notes-emacs.md ./
 cp ~/Desktop/notes-vim.md ./
 
