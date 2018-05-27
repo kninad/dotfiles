@@ -50,7 +50,7 @@
 (global-auto-complete-mode t)
 
 ;; Markdown mode -- use pandoc with custom css file
-(setq markdown-command "pandoc --css ~/.emacs.d/emacs-pandoc.css")
+(setq markdown-command "pandoc --css ~/.emacs.d/myextras/org5.css")
 
 ;;---------------------------------
 ;; Org mode config
