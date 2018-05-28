@@ -127,5 +127,7 @@ export TERM="xterm-256color"
 export CUDA_HOME=/usr/local/cuda-9.1
 export LD_LIBRARY_PATH=${CUDA_HOME}/lib64 
  
-PATH=${CUDA_HOME}/bin:${PATH} 
-export PATH 
+export PATH=${CUDA_HOME}/bin:${PATH} 
+#export PATH 
+
+
