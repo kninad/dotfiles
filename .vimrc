@@ -7,7 +7,7 @@
 set nocompatible
 
 set term=screen-256color
-colorscheme atom-dark
+colorscheme Tomorrow-Night
 syntax on      "enable syntax processing
 
 " Tabs and spaces
