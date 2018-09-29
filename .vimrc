@@ -6,8 +6,11 @@
 " This must be first, because it changes other options as a side effect.
 set nocompatible
 
-set term=screen-256color
-colorscheme Tomorrow-Night
+set background=light
+"let g:solarized_termcolors=256
+"set term=screen-256color
+colorscheme solarized
+"colorscheme Tomorrow-Night
 syntax on      "enable syntax processing
 
 " Tabs and spaces
@@ -16,19 +19,23 @@ set softtabstop=4
 set shiftwidth=4
 set expandtab
 set autoindent
-set backspace=indent,eol,start	" allow backspacing over everything in insert mode
+set backspace=indent,eol,start  " allow backspacing over everything in insert mode
 
 " display indentation guides
-set list listchars=tab:❘-,trail:·,extends:»,precedes:«,nbsp:×
+" set list listchars=tab:❘-,trail:·,extends:»,precedes:«,nbsp:×
+" :set listchars=tab:\|\ 
+" :set list
+
+
 
 " convert spaces to tabs when reading file
-autocmd! bufreadpost * set noexpandtab | retab! 4
+" autocmd! bufreadpost * set noexpandtab | retab! 4
 
 " convert tabs to spaces before writing file
 autocmd! bufwritepre * set expandtab | retab! 4
 
 " convert spaces to tabs after writing file (to show guides again)
-autocmd! bufwritepost * set noexpandtab | retab! 4
+" autocmd! bufwritepost * set noexpandtab | retab! 4
 
 
 
@@ -46,7 +53,7 @@ set showmatch      " highlight matching brackets
 
 " Searching
 set history=50
-set showcmd			" display incomplete commands
+set showcmd         " display incomplete commands
 set incsearch      " search asap chars enter
 set hlsearch       " highlight matches
 
