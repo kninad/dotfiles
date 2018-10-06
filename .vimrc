@@ -6,11 +6,9 @@
 " This must be first, because it changes other options as a side effect.
 set nocompatible
 
-set background=light
-"let g:solarized_termcolors=256
+set background=dark
 "set term=screen-256color
 colorscheme solarized
-"colorscheme Tomorrow-Night
 syntax on      "enable syntax processing
 
 " Tabs and spaces
@@ -27,7 +25,6 @@ set backspace=indent,eol,start  " allow backspacing over everything in insert mo
 " :set list
 
 
-
 " convert spaces to tabs when reading file
 " autocmd! bufreadpost * set noexpandtab | retab! 4
 
@@ -37,9 +34,8 @@ autocmd! bufwritepre * set expandtab | retab! 4
 " convert spaces to tabs after writing file (to show guides again)
 " autocmd! bufwritepost * set noexpandtab | retab! 4
 
-
-
-
+" Long line marker
+:set colorcolumn=80
 " Completion
 set complete-=i
 
