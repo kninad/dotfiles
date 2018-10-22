@@ -1,6 +1,6 @@
 cp ~/.bashrc ./
 cp ~/.tmux.conf ./
- p ~/.vimrc ./
+cp ~/.vimrc ./
 cp -r ~/.pandoc/templates ./
 
 git add .

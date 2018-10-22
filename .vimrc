@@ -8,7 +8,7 @@ set nocompatible
 
 set background=dark
 "set term=screen-256color
-colorscheme solarized
+colorscheme Tomorrow-Night
 syntax on      "enable syntax processing
 
 " Tabs and spaces
