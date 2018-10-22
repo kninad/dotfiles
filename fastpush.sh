@@ -1,6 +1,7 @@
 cp ~/.bashrc ./
 cp ~/.tmux.conf ./
-cp ~/.vimrc ./
+ p ~/.vimrc ./
+cp -r ~/.pandoc/templates ./
 
 git add .
 git commit -m "updated dotfiles"
