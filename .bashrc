@@ -116,15 +116,15 @@ if ! shopt -oq posix; then
   fi
 fi
 
+
 # added by Anaconda3 installer
-export PATH="/home/ninad/anaconda3/bin:$PATH"
+export PATH="/home/ninad/anaconda3/bin:$PATH"  # commented out by conda initialize
 
 # tmux vim color
 export TERM=screen-256color
 alias tmux='tmux -2'
 
-# For DataGrip IDE
-export PATH="/home/ninad/Downloads/DataGrip-2018.2.3/bin:$PATH"
-
 # To remove weird coloring of some dirs with ls
 LS_COLORS=$LS_COLORS:'ow=1;34:tw=1;34:' ; export LS_COLORS
+
+
