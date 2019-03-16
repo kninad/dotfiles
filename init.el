@@ -1,66 +1,71 @@
-;; init.el --- Emacs configuration
+; init.el -- Emacs configuration
 
 ;; INSTALL PACKAGES
 ;; --------------------------------------
 
-(require 'package)
-
-(add-to-list 'package-archives
-       '("melpa" . "http://melpa.org/packages/") t)
+(when (>= emacs-major-version 24)
+  (require 'package)
+  (package-initialize)
+  (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/") t)
+  (add-to-list 'package-archives '("elpa" . "http://elpa.gnu.org/packages/") t)
+  ;;(package-refresh-contents)  
+)
 
 (package-initialize)
 (when (not package-archive-contents)
   (package-refresh-contents))
 
 (defvar myPackages
-  '(ein
-    elpy
-    flycheck
-    py-autopep8))
+  '(better-defaults
+    solarized-theme
+    anaconda-mode
+    company
+))
 
 (mapc #'(lambda (package)
     (unless (package-installed-p package)
       (package-install package)))
       myPackages)
 
-;; BASIC CUSTOMIZATION
-;; --------------------------------------
-
-;;(setq inhibit-startup-message t) ;; hide the startup message
+;;----------------------------------------
+;;; BASIC SETTINGS
+;; (setq inhibit-startup-message t) ;; hide the startup message
 (global-linum-mode t) ;; enable line numbers globally
 (tool-bar-mode -1)
+(load-theme 'solarized-light t)
+(setq column-number-mode t)
+(setq indent-tabs-mode nil)
+(setq make-backup-files nil)
 
-;; PYTHON CONFIGURATION
-;; --------------------------------------
 
-(elpy-enable)
 
-;; use flycheck not flymake with elpy
-(when (require 'flycheck nil t)
-  (setq elpy-modules (delq 'elpy-module-flymake elpy-modules))
-  (add-hook 'elpy-mode-hook 'flycheck-mode))
+(add-hook 'after-init-hook 'global-company-mode)
 
-;; enable autopep8 formatting on save
-(require 'py-autopep8)
-(add-hook 'elpy-mode-hook 'py-autopep8-enable-on-save)
+(eval-after-load "company"
+ '(add-to-list 'company-backends '(company-jedi )))
+
+;;------------------------------------
+;;; PYTHON SPECIFIC
+(add-hook 'python-mode-hook 'anaconda-mode)
+
+(add-hook 'python-mode-hook 'jedi:setup)
+
 
 ;; Use IPython interpreter
 (setq python-shell-interpreter "ipython"
+      python-shell-interpreter-args "-i --simple-prompt --pprint")
+
+(add-hook 'python-mode-hook
+    (lambda ()
+       (setq indent-tabs-mode nil)
+       (setq tab-width 4)))
 
 
-python-shell-interpreter-args "-i --simple-prompt")
-
-;; ORG MODE
-;;-----------------------------------
-
-;; set maximum indentation for description lists
-(setq org-list-description-max-indent 5)
-
-;; prevent demoting heading also shifting text inside sections
-(setq org-adapt-indentation nil)
 
 
-;;; ORG MODE- html css
+;;----------------------------------------
+;;; ORG MODE
+;;; html/css exports
 (defun my-org-inline-css-hook (exporter)
   "Insert custom inline css"
   (when (eq exporter 'html)
@@ -80,20 +85,15 @@ python-shell-interpreter-args "-i --simple-prompt")
 
 (add-hook 'org-export-before-processing-hook 'my-org-inline-css-hook)
 
-;; init.el ends here
-
+;;;--------------------------------------
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(ansi-color-faces-vector
-   [default default default italic underline success warning error])
- '(custom-enabled-themes (quote (solarized-light)))
- '(custom-safe-themes
+ '(package-selected-packages
    (quote
-    ("8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" "d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879" default)))
- '(package-selected-packages (quote (solarized-theme py-autopep8 flycheck elpy ein))))
+    (company-ansible company-jedi company company-anaconda flycheck flymake-python-pyflakes elpy pdf-tools solarized-theme better-defaults))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
