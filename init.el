@@ -33,14 +33,13 @@
 (global-linum-mode t) ;; enable line numbers globally
 (tool-bar-mode -1)
 (load-theme 'solarized-light t)
+(global-hl-line-mode +1)
+
 (setq column-number-mode t)
 (setq indent-tabs-mode nil)
 (setq make-backup-files nil)
 
-
-
 (add-hook 'after-init-hook 'global-company-mode)
-
 (eval-after-load "company"
  '(add-to-list 'company-backends '(company-jedi )))
 
