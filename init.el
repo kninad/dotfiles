@@ -1,4 +1,4 @@
-; init.el -- Emacs configuration
+;;; init.el -- Emacs configuration
 
 ;; INSTALL PACKAGES
 ;; --------------------------------------
@@ -18,8 +18,10 @@
 (defvar myPackages
   '(better-defaults
     solarized-theme
-    anaconda-mode
     company
+    anaconda-mode
+    company-jedi
+    flycheck
 ))
 
 (mapc #'(lambda (package)
@@ -49,6 +51,8 @@
 
 (add-hook 'python-mode-hook 'jedi:setup)
 
+;; linting
+(add-hook 'after-init-hook #'global-flycheck-mode)
 
 ;; Use IPython interpreter
 (setq python-shell-interpreter "ipython"
