@@ -29,13 +29,15 @@
       (package-install package)))
       myPackages)
 
-;;----------------------------------------
-;;; BASIC SETTINGS
-;; (setq inhibit-startup-message t) ;; hide the startup message
+;;;----------------------------------------
+;;; BASIC SETTINGS 
+(setq inhibit-startup-message t) ;; hide the startup message
 (global-linum-mode t) ;; enable line numbers globally
 (tool-bar-mode -1)
 (load-theme 'solarized-light t)
+(display-time-mode 1)
 (global-hl-line-mode +1)
+(blink-cursor-mode 0)
 
 (setq column-number-mode t)
 (setq indent-tabs-mode nil)
@@ -45,13 +47,11 @@
 (eval-after-load "company"
  '(add-to-list 'company-backends '(company-jedi )))
 
-;;------------------------------------
+;;;------------------------------------
 ;;; PYTHON SPECIFIC
 (add-hook 'python-mode-hook 'anaconda-mode)
-
 (add-hook 'python-mode-hook 'jedi:setup)
-
-;; linting
+;;; linting
 (add-hook 'after-init-hook #'global-flycheck-mode)
 
 ;; Use IPython interpreter
@@ -62,7 +62,6 @@
     (lambda ()
        (setq indent-tabs-mode nil)
        (setq tab-width 4)))
-
 
 
 
