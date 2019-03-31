@@ -1,7 +1,7 @@
 cp ~/.bashrc ./
 cp ~/.tmux.conf ./
 cp ~/.vimrc ./
-cp -r ~/.pandoc/templates ./
+cp -r ~/.pandoc/ ./pandoc/
 cp ~/.emacs.d/init.el ./
 cp -r ~/.emacs.d/org-css/ ./
 
