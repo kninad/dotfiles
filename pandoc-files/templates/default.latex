@@ -5,8 +5,8 @@ $endif$
 $if(fontfamily)$
 \usepackage[$for(fontfamilyoptions)$$fontfamilyoptions$$sep$,$endfor$]{$fontfamily$}
 $else$
-\usepackage{palatino}
-%\usepackage{times}
+%\usepackage{palatino}
+\usepackage{times}
 $endif$
 $if(linestretch)$
 \usepackage{setspace}

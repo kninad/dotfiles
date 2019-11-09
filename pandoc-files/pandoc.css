@@ -27,7 +27,7 @@ hr {
     border-top: 1px solid #cccccc; }
       
 h1,h2,h3,h4,h5,h6 {
-    font-family: Georgia, Palatino, 'Palatino Linotype', 'Times New Roman', times, serif;
+    font-family: Georgia, 'Times New Roman', times, serif;
     line-height: 1.2;
     margin-top: 1.5em;
     font-weight: normal;

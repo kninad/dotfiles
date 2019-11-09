@@ -1,0 +1,29 @@
+{
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "workbench.colorTheme": "Solarized Dark",
+    "editor.rulers": [
+        80,
+        120
+    ],
+    "latex-workshop.view.pdf.viewer": "tab",
+    "workbench.sideBar.location": "left",
+    "workbench.activityBar.visible": true,
+    "workbench.panel.defaultLocation": "right",
+    "python.pythonPath": "/home/ninad/anaconda3/bin/python",
+    "markdown.extension.toc.githubCompatibility": true,
+    "window.zoomLevel": 0,
+    "editor.fontSize": 15,
+    "python.dataScience.sendSelectionToInteractiveWindow": true,
+    "editor.renderWhitespace": "none",
+    "terminal.integrated.inheritEnv": false,
+    "pandoc.htmlOptString": "-s -t html5 -H ~/.pandoc/pandoc.css ",
+    "spellright.language": [
+        "English (American)"
+    ],
+    "spellright.documentTypes": [
+        "latex",
+        "plaintext",
+        "markdown"
+    ]
+}
