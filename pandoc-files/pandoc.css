@@ -6,10 +6,10 @@ body {
       width:52%;
       margin:0 auto;
       padding: 0px;
-      background-color: #FFFFF1;
+      background-color: #FFFFFE;
       font-size:16px;
       font-family: "DejaVu Sans", Arial, sans-serif;
-      color: #111;
+      color: #222;
       line-height:1.4; }
 
 hr {
@@ -27,11 +27,11 @@ hr {
     border-top: 1px solid #cccccc; }
       
 h1,h2,h3,h4,h5,h6 {
-    font-family: Georgia, 'Times New Roman', times, serif;
+    font-family: Palatino,Georgia, 'Times New Roman', times, serif;
     line-height: 1.2;
     margin-top: 1.5em;
-    font-weight: normal;
-    color: #333; }
+    font-weight: bold;
+    color: #444; }
       
 h1 {  font-size: 1.8em; }
 h2 {  font-size: 1.6em; }
