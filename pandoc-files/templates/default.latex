@@ -6,7 +6,8 @@ $if(fontfamily)$
 \usepackage[$for(fontfamilyoptions)$$fontfamilyoptions$$sep$,$endfor$]{$fontfamily$}
 $else$
 %\usepackage{palatino}
-\usepackage{times}
+%\usepackage{times}
+\usepackage{charter}
 $endif$
 $if(linestretch)$
 \usepackage{setspace}
