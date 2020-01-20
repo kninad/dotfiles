@@ -12,7 +12,7 @@
     "workbench.panel.defaultLocation": "right",
     "python.pythonPath": "/home/ninad/anaconda3/bin/python",
     "markdown.extension.toc.githubCompatibility": true,
-    "window.zoomLevel": 0,
+    "window.zoomLevel": 1.5,
     "editor.fontSize": 16,
     "python.dataScience.sendSelectionToInteractiveWindow": true,
     "editor.renderWhitespace": "none",
