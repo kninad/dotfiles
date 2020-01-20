@@ -1,8 +1,8 @@
-cp ~/.bashrc ./
-cp ~/.tmux.conf ./
-cp ~/.vimrc ./
-cp -r ~/.pandoc/templates/ pandoc-files/
-cp ~/.pandoc/pandoc.css pandoc-files/
+cp ~/.bashrc ./bashrc
+cp ~/.tmux.conf ./tmux.conf
+cp ~/.vimrc ./vimrc
+cp -r ~/.pandoc/templates/ pandoc/
+cp ~/.pandoc/pandoc.css pandoc/
 cp ~/.config/Code/User/settings.json vscode_settings.json
 # cp ~/.emacs.d/init.el ./
 # cp -r ~/.emacs.d/org-css/ ./
