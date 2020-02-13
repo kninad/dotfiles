@@ -119,3 +119,22 @@ fi
 
 ## Terminal ls weird colors
 export LS_COLORS="$LS_COLORS:ow=1;34:tw=1;34:"
+
+## Anaconda python path
+# export PATH="/home/ninad/anaconda3/bin:$PATH"  # commented out by conda initialize
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/ninad/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/ninad/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/ninad/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/ninad/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+

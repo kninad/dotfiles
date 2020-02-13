@@ -1,0 +1,13 @@
+startup_message off           # default: on
+defscrollback 1000            # default: 100
+autodetach on
+hardstatus alwayslastline "[%H] [Time: %c] %w --- gnu-screen"
+	
+# "X" is "remove", which kills a split, but small "x" is lock which is
+# not only useless, but kills all splits once you log back in:
+bind x remove
+
+# similarly, "s" is the useless and deeply problematic "xoff" command (which
+# effectively locks your window), but "S" is the useful "split" so make
+# both "s" and "S" "split"
+bind s split 

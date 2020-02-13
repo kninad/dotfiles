@@ -1,6 +1,7 @@
 cp ~/.bashrc ./bashrc
 cp ~/.tmux.conf ./tmux.conf
 cp ~/.vimrc ./vimrc
+cp ~/.screenrc ./screenrc
 cp -r ~/.pandoc/templates/ pandoc/
 cp ~/.pandoc/pandoc.css pandoc/
 cp ~/.config/Code/User/settings.json vscode_settings.json

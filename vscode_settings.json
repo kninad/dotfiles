@@ -1,7 +1,6 @@
 {
     "editor.suggestSelection": "first",
     "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-    "workbench.colorTheme": "Monokai Dimmed",
     "editor.rulers": [
         80,
         120
@@ -12,7 +11,7 @@
     "workbench.panel.defaultLocation": "right",
     "python.pythonPath": "/home/ninad/anaconda3/bin/python",
     "markdown.extension.toc.githubCompatibility": true,
-    "window.zoomLevel": 1.5,
+    "window.zoomLevel": 1,
     "editor.fontSize": 16,
     "python.dataScience.sendSelectionToInteractiveWindow": true,
     "editor.renderWhitespace": "none",
@@ -26,5 +25,6 @@
         "plaintext",
         "markdown"
     ],
-    "editor.fontFamily": "'Ubuntu Mono', Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'"
+    "editor.fontFamily": "'Ubuntu Mono', Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
+    "workbench.colorTheme": "Monokai Dimmed"
 }
