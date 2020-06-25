@@ -1,30 +1,27 @@
 {
+    "telemetry.enableTelemetry": false,
+    "telemetry.enableCrashReporter": false,
     "editor.suggestSelection": "first",
     "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-    "editor.rulers": [
-        80,
-        120
-    ],
-    "latex-workshop.view.pdf.viewer": "tab",
-    "workbench.sideBar.location": "left",
+    "java.semanticHighlighting.enabled": false,
     "workbench.activityBar.visible": true,
-    "workbench.panel.defaultLocation": "right",
-    "python.pythonPath": "/home/ninad/anaconda3/bin/python",
-    "markdown.extension.toc.githubCompatibility": true,
-    "window.zoomLevel": 1,
-    "editor.fontSize": 16,
-    "python.dataScience.sendSelectionToInteractiveWindow": true,
+    "extensions.ignoreRecommendations": true,
+    "files.exclude": {
+        "**/.classpath": true,
+        "**/.project": true,
+        "**/.settings": true,
+        "**/.factorypath": true
+    },
+    "editor.minimap.enabled": false,
+    "breadcrumbs.enabled": false,
     "editor.renderWhitespace": "none",
-    "terminal.integrated.inheritEnv": false,
     "pandoc.htmlOptString": "-s -t html5 -H ~/.pandoc/pandoc.css ",
-    "spellright.language": [
-        "English (American)"
+    "editor.rulers": [
+    90, 110
     ],
-    "spellright.documentTypes": [
-        "latex",
-        "plaintext",
-        "markdown"
-    ],
-    "editor.fontFamily": "'Ubuntu Mono', Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
-    "workbench.colorTheme": "Monokai Dimmed"
+    "workbench.panel.defaultLocation": "right",
+    "workbench.iconTheme": "Monokai Pro Icons",
+    "terminal.integrated.fontSize": 12,
+    "window.menuBarVisibility": "toggle",
+    "workbench.statusBar.visible": true
 }

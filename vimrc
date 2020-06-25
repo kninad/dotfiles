@@ -7,7 +7,7 @@
 set nocompatible
 
 set background=dark
-"set term=screen-256color
+set term=screen-256color
 colorscheme Tomorrow-Night
 syntax on      "enable syntax processing
 

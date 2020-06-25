@@ -43,10 +43,10 @@ h6 {  font-size: 0.8em; }
 small, sub, sup {  font-size: 75%; }
 
 
-a {	text-decoration: none;
+a { text-decoration: none;
     color:#255db8; }
-a:hover {	text-decoration: underline; }
-a:visited {	color:#255db8; }
+a:hover {   text-decoration: underline; }
+a:visited { color:#255db8; }
 
 ul {  padding-left: 1.4em; }
 li {  margin-bottom: 0.4em; }
@@ -74,13 +74,15 @@ blockquote {
 
 /* Pre and Code */
 pre {
-    background-color: #FAFAFA;
+    color: #444;
+    background-color: #f6f6f6;
     display: block;
     padding: 1em;
-    overflow-x: auto; }
+    overflow-x: auto; 
+    border-left: 4px solid #d8dee9; }
 
 code {
-    background-color: #FAFAFA;
+    background-color: #f6f6f6;
     font-size: 0.95em;
     font-family: monospace, serif;
     padding: 0 0.5em;
@@ -88,7 +90,6 @@ code {
 
 pre > code {
     padding: 0;
-    background-color: transparent;
     white-space: pre; }
 
 

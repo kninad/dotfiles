@@ -116,13 +116,6 @@ if ! shopt -oq posix; then
   fi
 fi
 
-
-## Terminal ls weird colors
-export LS_COLORS="$LS_COLORS:ow=1;34:tw=1;34:"
-
-## Anaconda python path
-# export PATH="/home/ninad/anaconda3/bin:$PATH"  # commented out by conda initialize
-
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 __conda_setup="$('/home/ninad/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
@@ -137,4 +130,7 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
+
+## Terminal ls weird colors
+export LS_COLORS="$LS_COLORS:ow=1;34:tw=1;34:"
 
