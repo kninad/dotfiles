@@ -1,5 +1,5 @@
 cp ~/.bashrc ./bashrc
-cp ~/.tmux.conf ./tmux.conf
+# cp ~/.tmux.conf ./tmux.conf
 cp ~/.vimrc ./vimrc
 cp ~/.screenrc ./screenrc
 cp -r ~/.pandoc/templates/ pandoc/
