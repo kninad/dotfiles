@@ -7,9 +7,18 @@
 set nocompatible
 
 set background=dark
-set term=screen-256color
-colorscheme Tomorrow-Night
+
+" set term=screen-256color
+" colorscheme Tomorrow-Night
+
+let g:gruvbox_italic = '1'
+let g:gruvbox_contrast_dark = 'medium' 
+colorscheme gruvbox
+
 syntax on      "enable syntax processing
+
+" Dont wrap long lines!
+set nowrap
 
 " Tabs and spaces
 set tabstop=4
@@ -35,7 +44,7 @@ autocmd! bufwritepre * set expandtab | retab! 4
 " autocmd! bufwritepost * set noexpandtab | retab! 4
 
 " Long line marker
-:set colorcolumn=80
+:set colorcolumn=90
 " Completion
 set complete-=i
 

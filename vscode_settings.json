@@ -15,13 +15,40 @@
     "editor.minimap.enabled": false,
     "breadcrumbs.enabled": false,
     "editor.renderWhitespace": "none",
-    "pandoc.htmlOptString": "-s -t html5 -H ~/.pandoc/pandoc.css ",
+    "pandoc.htmlOptString": "-s -H /home/ninad/.pandoc/pandoc.css",
     "editor.rulers": [
-    90, 110
+    90, 100
     ],
     "workbench.panel.defaultLocation": "right",
-    "workbench.iconTheme": "Monokai Pro Icons",
-    "terminal.integrated.fontSize": 12,
-    "window.menuBarVisibility": "toggle",
-    "workbench.statusBar.visible": true
+    "terminal.integrated.fontSize": 15,
+    "window.menuBarVisibility": "default",
+    "workbench.statusBar.visible": true,
+    "python.languageServer": "Microsoft",
+    "python.showStartPage": false,
+    "[markdown]": {                
+        "editor.wordWrap": "false",
+        "editor.quickSuggestions": false
+    },
+    "[plaintext]": {
+        "editor.quickSuggestions": false
+    },
+    "window.zoomLevel": 0,
+    "window.restoreWindows": "none",
+    "julia.enableTelemetry": false,
+    "workbench.colorTheme": "Gruvbox Dark Hard",
+    "spellright.language": [
+        "English (American)"
+    ],
+    "spellright.documentTypes": [
+        "markdown",
+        "latex",
+        "plaintext",
+        "cpp"
+    ],
+    "latex-workshop.view.pdf.viewer": "tab",
+    "editor.fontFamily": "'Ubuntu Mono', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
+    "editor.fontSize": 16,
+    "markdown.preview.fontSize": 15,
+    "debug.console.fontSize": 15,
+    "pandoc.pdfOptString": "w"
 }

@@ -6,8 +6,13 @@ $if(fontfamily)$
 \usepackage[$for(fontfamilyoptions)$$fontfamilyoptions$$sep$,$endfor$]{$fontfamily$}
 $else$
 %\usepackage{palatino}
+%\usepackage{eulervm}
+
 %\usepackage{times}
-\usepackage{charter}
+
+%\usepackage{charter}
+\usepackage[bitstream-charter]{mathdesign}
+\let\circledS\undefined % here - PS
 $endif$
 $if(linestretch)$
 \usepackage{setspace}
