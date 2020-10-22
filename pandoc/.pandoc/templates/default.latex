@@ -1,11 +1,18 @@
 \documentclass[$if(fontsize)$$fontsize$,$endif$$if(lang)$$babel-lang$,$endif$$if(papersize)$$papersize$paper,$endif$$for(classoption)$$classoption$$sep$,$endfor$]{$documentclass$}
 $if(beamerarticle)$
-\usepackage{beamerarticle} % needs to be loaded first
+\usepackage{beamerarticple} % needs to be loaded first
 $endif$
 $if(fontfamily)$
 \usepackage[$for(fontfamilyoptions)$$fontfamilyoptions$$sep$,$endfor$]{$fontfamily$}
 $else$
-\usepackage{times}
+%\usepackage{palatino}
+%\usepackage{eulervm}
+
+%\usepackage{times}
+
+%\usepackage{charter}
+\usepackage[bitstream-charter]{mathdesign}
+\let\circledS\undefined % here - PS
 $endif$
 $if(linestretch)$
 \usepackage{setspace}
@@ -81,6 +88,7 @@ $if(colorlinks)$
             citecolor=$if(citecolor)$$citecolor$$else$Blue$endif$,
             urlcolor=$if(urlcolor)$$urlcolor$$else$Blue$endif$,
 $else$
+            colorlinks=true,
             pdfborder={0 0 0},
 $endif$
             breaklinks=true}

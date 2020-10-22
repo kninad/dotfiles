@@ -15,27 +15,27 @@
     "editor.minimap.enabled": false,
     "breadcrumbs.enabled": false,
     "editor.renderWhitespace": "none",
-    "pandoc.htmlOptString": "-s -H /home/ninad/.pandoc/pandoc.css",
+    "pandoc.htmlOptString": "-s -H /home/ninad/.pandoc/pandoc.css --filter=pandoc-citeproc",
     "editor.rulers": [
     90, 100
     ],
     "workbench.panel.defaultLocation": "right",
     "terminal.integrated.fontSize": 15,
-    "window.menuBarVisibility": "default",
+    "window.menuBarVisibility": "toggle",
     "workbench.statusBar.visible": true,
     "python.languageServer": "Microsoft",
     "python.showStartPage": false,
-    "[markdown]": {                
+    "[markdown]": {
+
         "editor.wordWrap": "false",
-        "editor.quickSuggestions": false
+        "editor.quickSuggestions": true,
     },
     "[plaintext]": {
         "editor.quickSuggestions": false
     },
-    "window.zoomLevel": 0,
     "window.restoreWindows": "none",
     "julia.enableTelemetry": false,
-    "workbench.colorTheme": "Gruvbox Dark Hard",
+    "workbench.colorTheme": "Monokai",
     "spellright.language": [
         "English (American)"
     ],
@@ -50,5 +50,13 @@
     "editor.fontSize": 16,
     "markdown.preview.fontSize": 15,
     "debug.console.fontSize": 15,
-    "pandoc.pdfOptString": "w"
+    "python.autoComplete.addBrackets": true,
+    "window.zoomLevel": 0,
+    "[c]": {
+        "editor.defaultFormatter": "ms-vscode.cpptools"
+    },
+    "C_Cpp.clang_format_fallbackStyle": "{ BasedOnStyle: Google, IndentWidth: 4, ColumnLimit: 0}",
+    "terminal.integrated.cwd": "${fileDirname}",
+    "pandoc.docxOptString": "--filter=pandoc-citeproc",
+    "pandoc.pdfOptString": "--filter=pandoc-citeproc"
 }
