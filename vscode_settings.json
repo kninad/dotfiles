@@ -1,62 +1,6 @@
 {
-    "telemetry.enableTelemetry": false,
-    "telemetry.enableCrashReporter": false,
-    "editor.suggestSelection": "first",
-    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-    "java.semanticHighlighting.enabled": false,
-    "workbench.activityBar.visible": true,
-    "extensions.ignoreRecommendations": true,
-    "files.exclude": {
-        "**/.classpath": true,
-        "**/.project": true,
-        "**/.settings": true,
-        "**/.factorypath": true
-    },
-    "editor.minimap.enabled": false,
-    "breadcrumbs.enabled": false,
-    "editor.renderWhitespace": "none",
-    "pandoc.htmlOptString": "-s -H /home/ninad/.pandoc/pandoc.css --filter=pandoc-citeproc",
-    "editor.rulers": [
-    90, 100
-    ],
-    "workbench.panel.defaultLocation": "right",
-    "terminal.integrated.fontSize": 15,
-    "window.menuBarVisibility": "toggle",
-    "workbench.statusBar.visible": true,
-    "python.languageServer": "Microsoft",
-    "python.showStartPage": false,
-    "[markdown]": {
-
-        "editor.wordWrap": "false",
-        "editor.quickSuggestions": true,
-    },
-    "[plaintext]": {
-        "editor.quickSuggestions": false
-    },
-    "window.restoreWindows": "none",
-    "julia.enableTelemetry": false,
-    "workbench.colorTheme": "Monokai",
-    "spellright.language": [
-        "English (American)"
-    ],
-    "spellright.documentTypes": [
-        "markdown",
-        "latex",
-        "plaintext",
-        "cpp"
-    ],
-    "latex-workshop.view.pdf.viewer": "tab",
-    "editor.fontFamily": "'Ubuntu Mono', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
-    "editor.fontSize": 16,
-    "markdown.preview.fontSize": 15,
-    "debug.console.fontSize": 15,
-    "python.autoComplete.addBrackets": true,
-    "window.zoomLevel": 0,
-    "[c]": {
-        "editor.defaultFormatter": "ms-vscode.cpptools"
-    },
-    "C_Cpp.clang_format_fallbackStyle": "{ BasedOnStyle: Google, IndentWidth: 4, ColumnLimit: 0}",
-    "terminal.integrated.cwd": "${fileDirname}",
-    "pandoc.docxOptString": "--filter=pandoc-citeproc",
-    "pandoc.pdfOptString": "--filter=pandoc-citeproc"
+    "window.dialogStyle": "custom",
+    "window.titleBarStyle": "custom",
+    "editor.fontFamily": "'Noto Sans Mono', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
+    "window.zoomLevel": 1
 }
