@@ -131,6 +131,4 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
-## Terminal ls weird colors
 export LS_COLORS="$LS_COLORS:ow=1;34:tw=1;34:"
-
