@@ -2,147 +2,432 @@
 <style>
 /* Custom CSS file for use with pandoc */
 
-body {      
-      width:52%;
-      margin:0 auto;
-      padding: 0px;
-      background-color: #FEFEFE;
-      font-size:16px;
-      font-family: "DejaVu Sans", Arial, sans-serif;
-      color: #111;
-      line-height:1.4; }
+/*
+ * I add this to html files generated with pandoc.
+ */
+
+
+html {
+  font-size: 100%;
+  overflow-y: scroll;
+  background-color:#fcfcfc;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+body {
+  color: #2f2f2f;
+  font-family: Arial, Helvetica, sans-serif;
+  /* font-family: Georgia, 'Times New Roman', Times, serif; */
+  /* font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; */
+  font-size: 14px;
+  line-height: 1.5;
+  padding: 1em;
+  margin: auto;
+  /* margin-left: 160px; */
+  max-width: 50em;
+  background-color:#fafafa;
+}
+
+/* The sidebar menu */
+#TOC {
+  /* height: 100%; Full-height: remove this if you want "auto" height */
+  width: 350px; /* Set the width of the sidebar */
+  position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+  z-index: 1; /* Stay on top */
+  top: 0; /* Stay at the top */
+  left: 0;
+  background-color: #f6f6f6; /* Black */
+  /* overflow: auto;
+  /*overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 10px;
+  margin-top: 15px;
+  margin-left: 50px;
+  max-height: 80%;
+  overflow:auto;
+}
+
+/* The navigation menu links */
+#TOC a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-family: Helvetica, Arial sans-serif;
+  font-size: 0.9em;
+  color: #111111;
+  display: block;
+}
+
+/* When you mouse over the navigation links, change their color */
+#TOC a:hover {
+  color: #444444;
+  text-decoration: underline;
+}
+
+
+#paper-banner {
+  float:left;
+  height:90px;
+  width: 90px;
+  border-radius: 10px;
+  margin:0em 1em 0em 0em;}
+
+#banner {
+    height:100px;
+    width:100%;
+}
+#footypic {
+  /* float: left; */
+  max-height:200px;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+#mypic {
+    max-height:200px;
+}
+
+
+#profile_pic {
+  float:left;
+  height:145px;
+  border-radius: 20px;
+  margin:0em 1em 0em 0em;
+  }
+ 
+ #research_pic {
+  float:right;
+  width:20em;
+  margin:0em 0em 1em 1em;
+  }
+ 
+ .footer {
+     /* margin: 0; */
+     font-size: .8em;
+ }
+
+ #hr_footer {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #c9c9c9;
+  /* border-bottom: 1px solid #eee; */
+ } 
+
+ .topnav {
+   overflow: hidden;
+   font-family: Arial, Helvetica, sans-serif;
+   /* font-weight: bold; */
+   font-size: 0.8em;   
+ }
+ 
+ .topnav a {
+   float: left;
+   /*color: #f2f2f2;*/
+   color: #1c373d; /* Blue */
+   text-align: center;
+   padding: 0px 10px 10px 0px;
+   text-decoration: none;
+   font-size: 1.2em;
+ }
+ 
+ .topnav a:hover {
+   /*background-color: #ddd;*/
+   /*color: black;*/
+     text-decoration: underline;
+ }
+ 
+ .topnav a.active {
+   /* background-color: #04AA6D; */
+   color: #634508;
+ }
+ 
+ .nav_item_active a{
+   /*color: #09D4FF;*/
+   color: #634508;
+   }
+ 
+
+a {
+  color: #417189;
+  text-decoration: none;
+}
+
+a:visited {
+  color: #417189;
+}
+
+a:hover {
+  color: #06e;
+}
+
+a:active {
+  color: #634508;
+}
+
+a:focus {
+  outline: thin dotted;
+}
+
+
+/*
+*::-moz-selection {
+  background: rgba(255, 255, 0, 0.3);
+  color: #000;
+}
+
+*::selection {
+  background: rgba(255, 255, 0, 0.3);
+  color: #000;
+}
+
+a::-moz-selection {
+  background: rgba(255, 255, 0, 0.3);
+  color: #0645ad;
+}
+
+a::selection {
+  background: rgba(255, 255, 0, 0.3);
+  color: #0645ad;
+}
+*/
+
+
+p {
+  margin: 1em 0;
+}
+
+img {
+  max-height: 200px;
+  max-width: 100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: Palatino, Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  /* font-family: Arial, Helvetica, sans-serif; */
+  color: #255198;
+  line-height: 125%;
+  margin-top: 0.25em;
+  font-weight: normal;
+}
+
+h1, h2, h3 {
+  padding-bottom: 0.2em;
+	line-height: 1.25;
+	padding-top: 0.8em;
+	border-bottom: 2px solid #c0c0c0;
+	font-weight: normal;
+}
+
+h4, h5, h6 {
+  font-weight: bold;
+}
+
+h1 {
+  font-size: 1.7em;
+}
+
+h2 {
+  font-size: 1.5em;
+}
+
+h3 {
+  font-size: 1.35em;
+}
+
+h4 {
+  font-size: 1em;
+}
+
+h5 {
+  font-size: 0.8em;
+}
+
+h6 {
+  font-size: 0.7em;
+}
+
+blockquote {
+  color: #666666;
+  margin: 0;
+  padding-left: 3em;
+  border-left: 0.5em #EEE solid;
+}
 
 hr {
-    display: block;
-    position: relative;
-    padding: 0;
-    margin: 8px auto;
-    height: 0;
-    width:100%;
-    max-height: 0;
-    font-size: 1px;
-    line-height: 0;
-    clear: both;
-    border: none;
-    border-top: 1px solid #cccccc; }
-      
-h1,h2,h3,h4,h5,h6 {
-    font-family: Georgia, Palatino, 'Times New Roman', times, serif;
-    line-height: 1.2;
-    margin-top: 1.5em;
-    font-weight: bold;
-    color: #555; }
-      
-h1 {  font-size: 1.8em; }
-h2 {  font-size: 1.6em; }
-h3 {  font-size: 1.4em; }
-h4 {  font-size: 1.2em; }
-h5 {  font-size: 1.0em; }
-h6 {  font-size: 0.8em; }
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1.75px solid #d6d6d6;
+  /*border-bottom: 1px solid #eee;*/
+  margin: 0;
+  padding: 0;
+}
 
-small, sub, sup {  font-size: 75%; }
+pre, code, kbd, samp {
+  color: #323232;
+  background-color: #f4f4f4;
+  font-family: SFMono-Regular, Consolas, "Liberation Mono", 'Courier New', Courier, monospace;
+  font-size: 0.9em;
+  border-radius: 4px;
+  overflow: scroll;
+}
 
-
-a { text-decoration: none;
-    color:#255db8; }
-a:hover {   text-decoration: underline; }
-a:visited { color:#255db8; }
-
-ul {  padding-left: 1.4em; }
-li {  margin-bottom: 0.4em; }
-
-
-figcaption {    display:none; }
-
-figure { 
-    display: block; 
-    margin:0;
-    page-break-inside:avoid; }
-
-img { 
-    height:200px;
-    margin-right: 20px;
-    padding-left: 0.2em; }
-
-
-blockquote {  
-  color: #666666;
-  font-style: italic;
-  margin-left: 1.5em;
-  padding-left: 1em;
-  border-left: 3px solid #2c8898; }
-
-/* Pre and Code */
 pre {
-    color: #444;
-    background-color: #f6f6f6;
-    display: block;
-    padding: 1em;
-    overflow-x: auto; 
-    border-left: 4px solid #d8dee9; }
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
 
-code {
-    background-color: #f6f6f6;
-    font-size: 0.95em;
-    font-family: monospace, serif;
-    padding: 0 0.5em;
-    white-space: pre-wrap; }
+b, strong {
+  font-weight: bold;
+}
 
-pre > code {
-    padding: 0;
-    white-space: pre; }
+dfn {
+  font-style: italic;
+}
 
+ins {
+  background: #ff9;
+  color: #000;
+  text-decoration: none;
+}
 
-/* Tables */
+mark {
+  background: #ff0;
+  color: #000;
+  font-style: italic;
+  font-weight: bold;
+}
+
+sub, sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sup {
+  top: -0.5em;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+ul, ol {
+  margin: 1em 0;
+  padding: 0 0 0 2em;
+}
+
+li p:last-child {
+  margin-bottom: 0;
+}
+
+ul ul, ol ol {
+  margin: .3em 0;
+}
+
+dl {
+  margin-bottom: 1em;
+}
+
+dt {
+  font-weight: bold;
+  margin-bottom: .8em;
+}
+
+dd {
+  margin: 0 0 .8em 2em;
+}
+
+dd:last-child {
+  margin-bottom: 0;
+}
+
+img {
+  border: 0;
+  -ms-interpolation-mode: bicubic;
+  vertical-align: middle;
+}
+
+figure {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+figure img {
+  border: none;
+  margin: 0 auto;
+  display:block;
+  page-break-inside:avoid; 
+}
+
+figcaption {
+  font-size: 0.8em;
+  font-style: italic;
+  margin: 0 0 .8em;
+  display:none;
+}
+
 table {
-  text-align: justify;
-  width: 100%;
-  border-collapse: collapse; 
-  margin-bottom: 10px;}
-  
+  margin-bottom: 2em;
+  border-bottom: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+  border-spacing: 0;
+  border-collapse: collapse;
+}
 
-td, th {
-  padding: 0.5em;
-  border-bottom: 1px solid #f1f1f1; }
+table th {
+  padding: .2em 1em;
+  background-color: #eee;
+  border-top: 1px solid #ddd;
+  border-left: 1px solid #ddd;
+}
 
-#TOC {
-    font-size: 10pt;
-    position: fixed;
-    right: 0em;
-    top: 0em;
-    padding-right: 1.2em;
-    background: #fefefe;
-    line-height: 12pt;
-    text-align: right;
-    box-shadow: 0 0 1em #777777;
-    -webkit-box-shadow: 0 0 1em #777777;
-    -moz-box-shadow: 0 0 1em #777777;
-    -webkit-border-bottom-left-radius: 5px;
-    -moz-border-radius-bottomleft: 5px;
-    /* ensure doesn't flow off the screen when expanded */
-    max-height: 80%;
-    overflow: auto; }
-    
-    
-    
+table td {
+  padding: .2em 1em;
+  border-top: 1px solid #ddd;
+  border-left: 1px solid #ddd;
+  vertical-align: top;
+}
+
+.author {
+  font-size: 1.2em;
+  text-align: center;
+}
+
+
+/* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  #TOC {display: none; }
+}
+
+@media screen and (max-width: 900px) {
+  #TOC {display: none; }
+}
+
+
 @media only screen and (min-width: 480px) {
   body {
     font-size: 14px;
   }
 }
-
 @media only screen and (min-width: 768px) {
   body {
     font-size: 16px;
   }
 }
-
 @media print {
   * {
     background: transparent !important;
     color: black !important;
     filter: none !important;
     -ms-filter: none !important;
+  }
+
+  #TOC{
+    display: none;
   }
 
   body {
