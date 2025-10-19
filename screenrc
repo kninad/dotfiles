@@ -2,12 +2,15 @@ startup_message off           # default: on
 defscrollback 1000            # default: 100
 autodetach on
 
+mousetrack on
+defmousetrack on
+
 # To float a part to right, use "%=". 
 # "%w" : gives a list of opened windows
 # "%H" : Hostname
 # "%C" : Time in 12hr without am/pm. "%a" adds that. "%c" is 24hr format.
 # Date: "%Y-%M-%d" -- "%d" is the zero padded date.
-hardstatus alwayslastline "[GNU Screen] %H | %w %= [%C%a, %Y-%M-%d]"
+hardstatus alwayslastline "[screen] %H | %w %= [%C%a, %d-%M-%Y]"
     
 # "X" is "remove", which kills a split, but small "x" is lock which is
 # not only useless, but kills all splits once you log back in:

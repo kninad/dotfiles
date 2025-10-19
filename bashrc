@@ -16,8 +16,8 @@ HISTCONTROL=ignoreboth
 shopt -s histappend
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=1000
-HISTFILESIZE=2000
+HISTSIZE=10000
+# HISTFILESIZE=2000
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
@@ -118,17 +118,42 @@ fi
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/ninad/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+__conda_setup="$('/home/ninad/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
-    if [ -f "/home/ninad/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/ninad/anaconda3/etc/profile.d/conda.sh"
+    if [ -f "/home/ninad/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/ninad/miniconda3/etc/profile.d/conda.sh"
     else
-        export PATH="/home/ninad/anaconda3/bin:$PATH"
+        export PATH="/home/ninad/miniconda3/bin:$PATH"
     fi
 fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+############ Custom Includes #########
+
+######## Weird Terminal Colors #######
 export LS_COLORS="$LS_COLORS:ow=1;34:tw=1;34:"
+
+######## CUDA PATH ########
+export CUDA_HOME=/usr/local/cuda
+export PATH=/usr/local/cuda/bin${PATH:+:${PATH}}
+export LD_LIBRARY_PATH=/usr/local/cuda/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
+# export PATH=/usr/local/cuda/bin:$PATH
+export LIBRARY_PATH=/usr/local/cuda/lib64:$LIBRARY_PATH
+#export LD_LIBRARY_PATH=/usr/local/cuda/lib4:$LD_LIBRARY_PATH
+########
+
+## UTD VPN launch
+alias utdvpn='globalprotect launch-ui'
+
+# Alias for (1) SSH IRVL My Desktop ; (2) MMLAB Desktop
+alias ssh_irvl='ssh ninad@irvl-ninad'
+alias ssh_mml='ssh ninad@mmlab'
+
+# Add custom app binaries (yt-dlp, hugo) to PATH
+export PATH=$PATH:/home/ninad/Applications/bin
+
+## ROS2
+alias source_ros2='source /opt/ros/jazzy/setup.bash'
