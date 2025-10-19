@@ -1,11 +1,8 @@
 cp ~/.bashrc ./bashrc
-# cp ~/.tmux.conf ./tmux.conf
-cp ~/.vimrc ./vimrc
+cp ~/.tmux.conf ./tmux.conf
 cp ~/.screenrc ./screenrc
-cp -r /home/ninad/.pandoc/* ./pandoc/
-cp ~/.config/Code/User/settings.json vscode_settings.json
-# cp ~/.emacs.d/init.el ./
-# cp -r ~/.emacs.d/org-css/ ./
+cp -r ~/.pandoc/* ./pandoc/
+cp ~/.config/Code/User/settings.json ./vscode/settings.json
 
 git add .
 git commit -m "updated dotfiles"

@@ -1,0 +1,20 @@
+{
+    "workbench.colorTheme": "Solarized Dark",
+    "python.analysis.typeCheckingMode": "basic",
+    "editor.fontFamily": "'JetBrains Mono', 'Droid Sans Mono', 'Ubuntu Sans Mono', 'monospace', monospace",
+    "editor.minimap.enabled": false,
+    "editor.rulers": [
+        80,
+        120
+    ],
+    "editor.fontSize": 13,
+    "terminal.integrated.fontSize": 13,
+    "spellright.language": [
+        "en_US"
+    ],
+    "spellright.documentTypes": [
+        "markdown",
+        "latex",
+        "plaintext"
+    ]
+}
