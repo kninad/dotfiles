@@ -157,3 +157,6 @@ export PATH=$PATH:/home/ninad/Applications/bin
 
 ## ROS2
 alias source_ros2='source /opt/ros/jazzy/setup.bash'
+
+## Starship Shell Manager -- like ohmyzsh but cross-shell
+eval "$(starship init bash)"
