@@ -1,0 +1,88 @@
+# Custom Includes
+
+
+## Toolbox to Path
+export PATH=$HOME/.toolbox/bin:$PATH
+
+
+## HubCLI alias
+# add here
+
+
+## History
+HISTFILE=${ZDOTDIR:-$HOME}/.zsh_history
+SAVEHIST=1000000
+HISTSIZE=1000000
+
+
+## Golang binaries
+export PATH="/local/home/${USER}/go/bin":$PATH
+
+## Cuda Paths
+export PATH=$HOME/.toolbox/bin:/usr/local/cuda/bin:$PATH
+export LD_LIBRARY_PATH=/usr/local/cuda/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
+export CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7
+
+## Aws Credentials
+
+##### add here #####
+
+
+export BRAZIL_WORKSPACE_DEFAULT_LAYOUT=short
+
+export AUTO_TITLE_SCREENS="NO"
+
+# if you wish to use IMDS set AWS_EC2_METADATA_DISABLED=false
+export AWS_EC2_METADATA_DISABLED=true
+
+
+set-title() {
+    echo -e "\e]0;$*\007"
+}
+
+ssh() {
+    set-title $*;
+    /usr/bin/ssh -2 $*;
+    set-title $HOST;
+}
+
+alias e=emacs
+alias bb=brazil-build
+
+alias bba='brazil-build apollo-pkg'
+alias bre='brazil-runtime-exec'
+alias brc='brazil-recursive-cmd'
+alias bws='brazil ws'
+alias bwsuse='bws use -p'
+alias bwscreate='bws create -n'
+alias brc=brazil-recursive-cmd
+alias bbr='brc brazil-build'
+alias bball='brc --allPackages'
+alias bbb='brc --allPackages brazil-build'
+alias bbra='bbr apollo-pkg'
+
+
+export PATH=$HOME/.toolbox/bin:$PATH
+autoload -Uz compinit && compinit
+
+# Set up mise for runtime management
+eval "$(/home/ninadkk/.local/bin/mise activate zsh)"
+source ~/.local/share/mise/completions.zsh
+source /home/ninadkk/.brazil_completion/zsh_completion
+alias finch='sudo HOME=/home/ninadkk DOCKER_CONFIG=/home/ninadkk/.docker finch'
+
+## pyenv after mise
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init - zsh)"
+eval "$(pyenv virtualenv-init -)"
+
+
+
+# Starship Prompt
+eval "$(starship init zsh)"
+
+
+# zsh auto suggestions
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+
